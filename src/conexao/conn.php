@@ -1,9 +1,9 @@
 <?php
 
-  $hostname = "sql102.epizy.com";
-  $database = "epiz_31473897_sysrifa";
-  $user = "epiz_31473897";
-  $password = "9sghFBiKiA2";
+  $hostname = "sql107.epizy.com";
+  $database = "epiz_31892403_sysrifa";
+  $user = "epiz_31892403";
+  $password = "aNvxTmYwtMs";
 
   try{
     $pdo = new PDO("mysql:host=" .$hostname.";dbname="$database .$user .$password);
