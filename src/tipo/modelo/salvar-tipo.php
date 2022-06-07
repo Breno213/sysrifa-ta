@@ -10,8 +10,8 @@
    if(empty($requestData['NOME'])){
        // caso a variável venha vazia do formulário, devolver/retornar um erro
        $dados = array(
-           "tipo" -> 'error',
-           "mensagem" -> 'Existe campos obrigatórios não preenchidos.'
+           "tipo" => 'error',
+           "mensagem" => 'Existe campos obrigatórios não preenchidos.'
        );
    } else {
        // caso os campos obrigatórios estejam preenchidos, iremos realizar o cadastro
@@ -25,16 +25,16 @@
            try{
                $stmt = $pdo->prepare('INSERT INTO TIPO (NOME) VALUES (:a)');
                $stmt->execute(array(
-                   ':a' -> utf8_decode($requestData['NOME'])
+                   ':a' => utf8_decode($requestData['NOME'])
                ));
                $dados = array(
-                "tipo" -> 'success',
-                "mensagem" -> 'Registro salvo com sucesso.'
+                "tipo" => 'success',
+                "mensagem" => 'Registro salvo com sucesso.'
             );
            } catch (PDOException $e) {
             $dados = array(
-                "tipo" -> 'error',
-                "mensagem" -> 'Não foi possível salvar o registro: '.$e
+                "tipo" => 'error',
+                "mensagem" => 'Não foi possível salvar o registro: '.$e
             );
            }
         
@@ -43,17 +43,17 @@
            try{
             $stmt = $pdo->prepare('UPDATE TIPO SET NOME = :a WHERE ID = :id');
             $stmt->execute(array(
-                ':id' -> $ID,
-                ':a' -> utf8_decode($requestData['NOME'])
+                ':id' => $ID,
+                ':a' => utf8_decode($requestData['NOME'])
             ));
             $dados = array(
-             "tipo" -> 'success',
-             "mensagem" -> 'Registro atualizado com sucesso.'
+             "tipo" => 'success',
+             "mensagem" => 'Registro atualizado com sucesso.'
          );
         } catch (PDOException $e) {
          $dados = array(
-             "tipo" -> 'error',
-             "mensagem" -> 'Não foi possível atualizar o registro: '.$e
+             "tipo" => 'error',
+             "mensagem" => 'Não foi possível atualizar o registro: '.$e
          );
        }
    }
