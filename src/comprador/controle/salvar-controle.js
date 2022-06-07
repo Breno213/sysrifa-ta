@@ -1,11 +1,11 @@
 $(document).ready(function() {
 
-    $('.btn-salvarcomprador').click(function(e) {
+    $('.btn-salvar-comprador').click(function(e) {
         e.preventDefault()
 
         let dados = $('#form-comprador').serialize()
 
-        dados += `&operacao=${$('.btn-salvarcomprador').attr('data-operation')}`
+        dados += `&operacao=${$('.btn-salvar-comprador').attr('data-operation')}`
 
         $.ajax({
             type: 'POST',
@@ -25,5 +25,5 @@ $(document).ready(function() {
             }
         })
     })
-
+ 
 })
