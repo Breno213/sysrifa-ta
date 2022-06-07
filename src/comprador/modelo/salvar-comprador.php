@@ -30,7 +30,7 @@
                    ':b' => utf8_decode($requestData['CEL']))
                ));
                $dados = array(
-                "tipo" => 'sucess',
+                "tipo" => 'success',
                 "mensagem" => 'Registro salvo com sucesso'
             );
            } catch(PDOException $e) {
@@ -50,7 +50,7 @@
                 ':b' => utf8_decode($requestData['CEL']))
             ));
             $dados = array(
-             "tipo" => 'sucess',
+             "tipo" => 'success',
              "mensagem" => 'Registro atualizado com sucesso'
          );
         } catch(PDOException $e) {
