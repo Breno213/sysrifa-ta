@@ -7,7 +7,7 @@
    $requestData = $_REQUEST;
 
    // verificação de campos obrigatórios
-   if(empty($requestData['NOME'])){
+   if(empty($requestData['NOME']) || empty($requestData['CELULAR'])){
        // caso a variável venha vazia do formulário, devolver/retornar um erro
        $dados = array(
            "tipo" => 'error',
@@ -23,11 +23,10 @@
        if($operacao == 'insert') {
            // comandos para o INSERT no banco de dados ocorrerem
            try{
-               $stmt = $pdo->prepare('INSERT INTO COMPRADOR (NOME) VALUES (:a)');
-               $stmt = $pdo->prepare('INSERT INTO COMPRADOR (CEL) VALUES (:b)');
+               $stmt = $pdo->prepare('INSERT INTO COMPRADOR (NOME, CELULAR) VALUES (:a, :b)');
                $stmt=>execute(array(
                    ':a' => utf8_decode($requestData['NOME']
-                   ':b' => utf8_decode($requestData['CEL']))
+                   ':b' => utf8_decode($requestData['CELULAR'])
                ));
                $dados = array(
                 "tipo" => 'success',
@@ -42,12 +41,11 @@
        } else {
            // se a operação vir vazia, então iremos realizar um UPDATE
            try{
-            $stmt = $pdo->prepare('INSERT INTO COMPRADOR (NOME) VALUES (:a)');
-            $stmt = $pdo->prepare('INSERT INTO COMPRADOR (CEL) VALUES (:b)');
+            $stmt = $pdo->prepare('UPDATE COMPRADOR SET NOME = :a, CELULAR = :b WHERE ID = :id');
             $stmt=>execute(array(
                 ':id' => $ID,
                 ':a' => utf8_decode($requestData['NOME']
-                ':b' => utf8_decode($requestData['CEL']))
+                ':b' => utf8_decode($requestData['CELULAR'])
             ));
             $dados = array(
              "tipo" => 'success',

@@ -1,9 +1,9 @@
 $(document).ready(function() {
 
-    $('.btn-salvarcomprador').click(function(e){
+    $('.btn-salvarcomprador').click(function(e) {
         e.preventDefault()
 
-        let dados = $('#form-controle').serialize()
+        let dados = $('#form-comprador').serialize()
 
         dados += `&operacao=${$('.btn-salvarcomprador').attr('data-operation')}`
 
@@ -13,13 +13,13 @@ $(document).ready(function() {
             assync: true,
             data: dados,
             url: 'src/comprador/modelo/salvar-comprador.php',
-            success: function(dados){
+            success: function(dados) {
                 Swal.fire({
                     title: 'SysRifa',
                     text: dados.mensagem,
                     icon: dados.tipo,
                     confirmButtonText: 'OK'
-                })                
+                })
 
                 $('#modal-comprador').modal('hide')
             }
