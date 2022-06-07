@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-    $('.btn-salvar').click(function(e) {
+    $('.btn-salvar').click(function(e){
         e.preventDefault()
 
         let dados = $('#form-tipo').serialize()
