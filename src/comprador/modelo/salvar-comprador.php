@@ -10,8 +10,8 @@
    if(empty($requestData['NOME'])){
        // caso a variável venha vazia do formulário, devolver/retornar um erro
        $dados = array(
-           "tipo" -> 'error',
-           "mensagem" -> 'Existe campos obrigatórios não preenchidos.'
+           "tipo" => 'error',
+           "mensagem" => 'Existe campos obrigatórios não preenchidos.'
        );
    } else {
        // caso os campos obrigatórios estejam preenchidos, iremos realizar o cadastro
@@ -25,18 +25,18 @@
            try{
                $stmt = $pdo->prepare('INSERT INTO COMPRADOR (NOME) VALUES (:a)');
                $stmt = $pdo->prepare('INSERT INTO COMPRADOR (CEL) VALUES (:b)');
-               $stmt->execute(array(
-                   ':a' -> utf8_decode($requestData['NOME']
-                   ':b' -> utf8_decode($requestData['CEL']))
+               $stmt=>execute(array(
+                   ':a' => utf8_decode($requestData['NOME']
+                   ':b' => utf8_decode($requestData['CEL']))
                ));
                $dados = array(
-                "tipo" -> 'sucess',
-                "mensagem" -> 'Registro salvo com sucesso'
+                "tipo" => 'sucess',
+                "mensagem" => 'Registro salvo com sucesso'
             );
            } catch(PDOException $e) {
             $dados = array(
-                "tipo" -> 'error',
-                "mensagem" -> 'Não foi possível salvar o registro: '.$e
+                "tipo" => 'error',
+                "mensagem" => 'Não foi possível salvar o registro: '.$e
             );
            }
        } else {
@@ -44,19 +44,19 @@
            try{
             $stmt = $pdo->prepare('INSERT INTO COMPRADOR (NOME) VALUES (:a)');
             $stmt = $pdo->prepare('INSERT INTO COMPRADOR (CEL) VALUES (:b)');
-            $stmt->execute(array(
-                ':id' -> $ID,
-                ':a' -> utf8_decode($requestData['NOME']
-                ':b' -> utf8_decode($requestData['CEL']))
+            $stmt=>execute(array(
+                ':id' => $ID,
+                ':a' => utf8_decode($requestData['NOME']
+                ':b' => utf8_decode($requestData['CEL']))
             ));
             $dados = array(
-             "tipo" -> 'sucess',
-             "mensagem" -> 'Registro atualizado com sucesso'
+             "tipo" => 'sucess',
+             "mensagem" => 'Registro atualizado com sucesso'
          );
         } catch(PDOException $e) {
          $dados = array(
-             "tipo" -> 'error',
-             "mensagem" -> 'Não foi possível atualizar o registro: '.$e
+             "tipo" => 'error',
+             "mensagem" => 'Não foi possível atualizar o registro: '.$e
          );
        }
    }
