@@ -23,34 +23,37 @@
        if($operacao == 'insert') {
            // comandos para o INSERT no banco de dados ocorrerem
            try{
-               $stmt = $pdo->prepare('INSERT INTO TIPO (NOME) VALUES (:a)');
+               $stmt = $pdo->prepare('INSERT INTO COMPRADOR (NOME) VALUES (:a)');
+               $stmt = $pdo->prepare('INSERT INTO COMPRADOR (CEL) VALUES (:b)');
                $stmt->execute(array(
-                   ':a' -> utf8_decode($requestData['NOME'])
+                   ':a' -> utf8_decode($requestData['NOME']
+                   ':b' -> utf8_decode($requestData['CEL']))
                ));
                $dados = array(
-                "tipo" -> 'success',
-                "mensagem" -> 'Registro salvo com sucesso.'
+                "tipo" -> 'sucess',
+                "mensagem" -> 'Registro salvo com sucesso'
             );
-           } catch (PDOException $e) {
+           } catch(PDOException $e) {
             $dados = array(
                 "tipo" -> 'error',
                 "mensagem" -> 'Não foi possível salvar o registro: '.$e
             );
            }
-        
        } else {
            // se a operação vir vazia, então iremos realizar um UPDATE
            try{
-            $stmt = $pdo->prepare('UPDATE TIPO SET NOME = :a WHERE ID = :id');
+            $stmt = $pdo->prepare('INSERT INTO COMPRADOR (NOME) VALUES (:a)');
+            $stmt = $pdo->prepare('INSERT INTO COMPRADOR (CEL) VALUES (:b)');
             $stmt->execute(array(
                 ':id' -> $ID,
-                ':a' -> utf8_decode($requestData['NOME'])
+                ':a' -> utf8_decode($requestData['NOME']
+                ':b' -> utf8_decode($requestData['CEL']))
             ));
             $dados = array(
-             "tipo" -> 'success',
-             "mensagem" -> 'Registro atualizado com sucesso.'
+             "tipo" -> 'sucess',
+             "mensagem" -> 'Registro atualizado com sucesso'
          );
-        } catch (PDOException $e) {
+        } catch(PDOException $e) {
          $dados = array(
              "tipo" -> 'error',
              "mensagem" -> 'Não foi possível atualizar o registro: '.$e

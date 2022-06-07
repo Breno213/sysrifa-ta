@@ -1,18 +1,18 @@
 $(document).ready(function() {
 
-    $('.btn-salvar').click(function(e) {
+    $('.btn-salvarcomprador').click(function(e){
         e.preventDefault()
 
-        let dados = $('#form-tipo').serialize()
+        let dados = $('#form-controle').serialize()
 
-        dados += `&operacao=${$('.btn-salvar').attr('data-operation')}`
+        dados += `&operacao=${$('.btn-salvarcomprador').attr('data-operation')}`
 
         $.ajax({
             type: 'POST',
             dataType: 'JSON',
             assync: true,
             data: dados,
-            url: 'src/tipo/modelo/salvar-tipo.php',
+            url: 'src/comprador/modelo/salvar-comprador.php',
             success: function(dados){
                 Swal.fire({
                     title: 'SysRifa',
@@ -21,7 +21,7 @@ $(document).ready(function() {
                     confirmButtonText: 'OK'
                 })                
 
-                $('#modal-tipo').modal('hide')
+                $('#modal-comprador').modal('hide')
             }
         })
     })
