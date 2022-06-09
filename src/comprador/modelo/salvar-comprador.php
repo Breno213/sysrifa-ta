@@ -7,7 +7,7 @@
    $requestData = $_REQUEST;
 
    // verificação de campos obrigatórios
-   if(empty($requestData['NOME'])) || (empty($requestData['CELULAR'])){
+   if(empty($requestData['NOME']) || empty($requestData['CELULAR'])){
        // caso a variável venha vazia do formulário, devolver/retornar um erro
        $dados = array(
            "tipo" => 'error',
@@ -25,7 +25,7 @@
            try{
                $stmt = $pdo->prepare('INSERT INTO COMPRADOR (NOME, CELULAR) VALUES (:a, :b)');
                $stmt->execute(array(
-                   ':a' => utf8_decode($requestData['NOME'])
+                   ':a' => utf8_decode($requestData['NOME']),
                    ':b' => utf8_decode($requestData['CELULAR'])
                ));
                $dados = array(
@@ -44,7 +44,7 @@
             $stmt = $pdo->prepare('UPDATE COMPRADOR SET NOME = :a WHERE ID = :id, CELULAR = :b WHERE ID = :id');
             $stmt->execute(array(
                 ':id' => $ID,
-                ':a' => utf8_decode($requestData['NOME'])
+                ':a' => utf8_decode($requestData['NOME']),
                 ':b' => utf8_decode($requestData['CELULAR'])
             ));
             $dados = array(
