@@ -1,23 +1,21 @@
-$(document).ready(function() {
+$(document).ready(function(){
+    $('.btn-novo').click(function(event){
+        event.preventDefault()
 
-    $('.btn-novo').click(function(e) {
-        e.preventDefault()
+       //Limpar todas as informações já existentes em nossa modal
+       $('.modal-title').empty()
+       $('.modal-body').empty()
 
-        // limpar todas informações existentes no modal
-        $('.modal-title').empty()
-        $('.modal-body').empty()
+       //Incluir nonos textos no cabeçalho da minha janela modal
+       $('.modal-title').append('Adicionar novo registro')
 
-        // incluir novos textos no cabeçalho da janela modal
-        $('.modal-title').append('Adicionar novo registro')
+       //Incluir o nosso formulario dentro da nossa janela modal
+       $('.modal-body').load('src/tipo/visao/form-tipo.html')
 
-        // incluir o formulário dentro do corpo da janela modal
-        $('.modal-body').load('src/tipo/visao/form-tipo.html')
+       //Iremos incluir uma função no botão salvar para demonstrar que é um novo registro
+       $('.btn-salvar').attr('data-operation', 'insert')
 
-        // incluir uma função no botão salvar para demonstrar que é um novo registro
-        $('.btn-salvar').attr('data-operation', 'insert')
-
-        // abrir janela modal
-        $('#modal-tipo').modal('show')
+       //Abrir nossa janela modal
+       $('#modal-tipo').modal('show')
     })
-
 })
