@@ -6,7 +6,8 @@ $(document).ready(function(){
             "url": "src/tipo/modelo/list-tipo.php",
             "type": "POST"
         },
-        "columns": [{
+        "columns": [
+        {
             "data": 'ID',
             "className": 'text-center'
         },

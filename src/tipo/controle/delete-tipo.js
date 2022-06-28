@@ -1,16 +1,17 @@
-$(document).ready(function() {
-    $('#table-tipo').on('click', 'button.btn-delete', function(e) {
+$(document).ready(function(){
+
+    $('#table-tipo').on('click', 'button.btn-delete', function(e){
         e.preventDefault()
 
         let ID = `ID=${$(this).attr('id')}`
 
         Swal.fire({
             title: 'SysRifa',
-            text: 'Deseja realmente excluir esse registro?',
+            text: 'Deseja realmente excluir este registro?',
             icon: 'question',
             showCancelButton: true,
-            confirmButtonText: 'Sim',
-            cancelButtonText: 'Não'
+            confirmButtonText: 'SIM',
+            cancelButtonText: 'NÃO' 
         }).then((result) => {
             if(result.value){
                 $.ajax({
@@ -19,17 +20,17 @@ $(document).ready(function() {
                     assync: true,
                     data: ID,
                     url: 'src/tipo/modelo/delete-tipo.php',
-                    success: function(dado) {
-                            Swal.fire({
-                                title: 'SysRifa',
-                                text: dado.mensagem,
-                                icon: dado.tipo,
-                                confirmButtonText: 'OK'
-                            })
+                    success: function(dados){
+                        Swal.fire({
+                            title: 'SysRifa',
+                            text: dados.mensagem,
+                            icon: dados.tipo,
+                            confirmButtonText: 'OK'
+                        })
                         $('#table-tipo').DataTable().ajax.reload()
                     }
                 })
-            }
-        })
-    })
+     }
+})
+})
 })
