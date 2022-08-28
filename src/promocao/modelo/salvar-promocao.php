@@ -7,7 +7,7 @@
    $requestData = $_REQUEST;
 
    // verificação de campos obrigatórios
-   if(empty($requestData['NOME']) || empty($requestData['DESCRICAO'])){
+   if(empty($requestData['TITULO']) || empty($requestData['DESCRICAO'])){
        // caso a variável venha vazia do formulário, devolver/retornar um erro
        $dados = array(
            "tipo" => 'error',
@@ -23,9 +23,9 @@
        if($operacao == 'insert') {
            // comandos para o INSERT no banco de dados ocorrerem
            try{
-               $stmt = $pdo->prepare('INSERT INTO PROMOCAO (NOME, DESCRICAO) VALUES (:a, :b)');
+               $stmt = $pdo->prepare('INSERT INTO PROMOCAO (TITULO, DESCRICAO) VALUES (:a, :b)');
                $stmt->execute(array(
-                   ':a' => utf8_decode($requestData['NOME']),
+                   ':a' => utf8_decode($requestData['TITULO']),
                    ':b' => utf8_decode($requestData['DESCRICAO'])
                ));
                $dados = array(
@@ -41,10 +41,10 @@
        } else {
            // se a operação vir vazia, então iremos realizar um UPDATE
            try{
-            $stmt = $pdo->prepare('UPDATE PROMOCAO SET NOME = :a WHERE ID = :id, DESCRICAO = :b WHERE ID = :id');
+            $stmt = $pdo->prepare('UPDATE PROMOCAO SET TITULO = :a WHERE ID = :id, DESCRICAO = :b WHERE ID = :id');
             $stmt->execute(array(
                 ':id' => $ID,
-                ':a' => utf8_decode($requestData['NOME']),
+                ':a' => utf8_decode($requestData['TITULO']),
                 ':b' => utf8_decode($requestData['DESCRICAO'])
             ));
             $dados = array(
