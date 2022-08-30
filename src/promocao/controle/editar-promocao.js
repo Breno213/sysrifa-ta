@@ -23,12 +23,12 @@ $(document).ready(function(){
         success: function(dado){
             if(dado.tipo == 'success'){
                 $('.modal-body').load('src/promocao/visao/form-promocao.html', function () {
-                    $('#TITULO').val(dado.dados.NOME)
+                    $('#TITULO').val(dado.dados.TITULO)
                     $('#DESCRICAO').val(dado.dados.DESCRICAO)
                     $('#ID').val(dado.dados.ID)
                 })
                 $('.btn-salvar').show()
-                $('#modal-tipo').modal('show')
+                $('#modal-promocao').modal('show')
          }else{
             Swal.fire({
                 title: 'SysRifa',
