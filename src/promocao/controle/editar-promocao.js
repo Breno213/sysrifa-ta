@@ -25,6 +25,11 @@ $(document).ready(function(){
                 $('.modal-body').load('src/promocao/visao/form-promocao.html', function () {
                     $('#TITULO').val(dado.dados.TITULO)
                     $('#DESCRICAO').val(dado.dados.DESCRICAO)
+                    $('#DATA_INICIO').val(dado.dados.DATA_INICIO)
+                    $('#DATA_FIM').val(dado.dados.DATA_FIM)
+                    $('#DATA_SORTEIO').val(dado.dados.DATA_SORTEIO)
+                    $('#ARRECADACAO').val(dado.dados.ARRECADACAO)
+                    $('#VALOR_RIFA').val(dado.dados.VALOR_RIFA)
                     $('#ID').val(dado.dados.ID)
                 })
                 $('.btn-salvar').show()

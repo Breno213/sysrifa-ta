@@ -24,7 +24,17 @@ $(document).ready(function(){
                     $('#TITULO').val(dado.dados.TITULO)
                     $('#TITULO').attr('readonly', 'true'),
                     $('#DESCRICAO').val(dado.dados.DESCRICAO)
-                    $('#DESCRICAO').attr('readonly', 'true')
+                    $('#DESCRICAO').attr('readonly', 'true'),
+                    $('#DATA_INICIO').val(dado.dados.DATA_INICIO)
+                    $('#DATA_INICIO').attr('readonly', 'true'),
+                    $('#DATA_FIM').val(dado.dados.DATA_FIM)
+                    $('#DATA_FIM').attr('readonly', 'true'),
+                    $('#DATA_SORTEIO').val(dado.dados.DATA_SORTEIO)
+                    $('#DATA_SORTEIO').attr('readonly', 'true'),
+                    $('#ARRECADACAO').val(dado.dados.ARRECADACAO)
+                    $('#ARRECADACAO').attr('readonly', 'true'),
+                    $('#VALOR_RIFA').val(dado.dados.VALOR_RIFA)
+                    $('#VALOR_RIFA').attr('readonly', 'true')
                 })
                 $('.btn-salvar').hide()
                 $('#modal-promocao').modal('show')
