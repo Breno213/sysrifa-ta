@@ -20,6 +20,26 @@ $(document).ready(function(){
              "className": 'text-center'
         },
         {
+            "data": 'DATA_INICIO',
+            "className": 'text-center'
+       },
+       {
+        "data": 'DATA_FIM',
+        "className": 'text-center'
+        },
+        {
+            "data": 'DATA_SORTEIO',
+            "className": 'text-center'
+       },
+       {
+        "data": 'ARRECADACAO',
+        "className": 'text-center'
+         },
+        {
+    "data": 'VALOR_RIFA',
+    "className": 'text-center'
+        },
+        {
             "data": 'ID',
             "className": 'text-center',
             "orderable": false,
