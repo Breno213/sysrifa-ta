@@ -6,8 +6,8 @@ $(document).ready(function() {
         let url = $(this).attr('href')
 
         $('#content').empty()
-        
-        $('#content').load(url)
 
+        $('#content').load(url)
     })
+
 })

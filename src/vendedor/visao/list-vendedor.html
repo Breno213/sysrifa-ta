@@ -6,12 +6,12 @@
                     <div class="row">
                         <div class="col-12 col-md-10">
                             <h4 class="text-dark">
-                                Gerenciar vendedores
+                                Gerenciar Vendedores
                             </h4>
                         </div>
                         <div class="col-12 col-md-2">
-                            <button class="btn btn-dark btn-block btn-novo">
-                                Adicionar
+                            <button class="btn btn-warning btn-block btn-new">
+                                <i class="fa-solid fa-circle-plus"></i> Adicionar
                             </button>
                         </div>
                     </div>
@@ -19,12 +19,13 @@
                 <div class="card-body">
                     <div class="table-responsive">
                         <table class="table table-hover" id="table-vendedor">
-                            <thead class="thead-dark">
-                              <tr>
-                                  <th scope="col" class="text-center">ID</th>
-                                  <th scope="col" class="text-center">NOME</th>
-                                  <th scope="col" class="text-center">AÇÕES</th>
-                              </tr>
+                            <thead class="thead">
+                                <tr>
+                                    <th scope="col" class="text-center">ID</th>
+                                    <th scope="col" class="text-center">NOME</th>
+                                    <th scope="col" class="text-center">CELULAR</th>
+                                    <th scope="col" class="text-center">AÇÕES</th>
+                                </tr>
                             </thead>
                         </table>
                     </div>
@@ -34,29 +35,30 @@
     </div>
 </div>
 
-<div id="modal-vendedor" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="modal-vendedor-title" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
+<div class="modal fade" id="modal-vendedor" tabindex="-1" role="dialog" data-backdrop="static" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="modal-vendedor-title">Title</h5>
-                <button class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
+                <h5 class="modal-title" id="exampleModalLabel">Título do modal</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+            <span aria-hidden="true">&times;</span>
+          </button>
             </div>
             <div class="modal-body">
-                <p>Content</p>
+                ...
             </div>
             <div class="modal-footer">
-                <button class="btn btn-secondary" data-dismiss="modal" aria-label="Close"><i class="fa-solid fa-circle-xmark"></i> Fechar </button>
-                <button class="btn btn-primary btn-salvar"><i class="fa-solid fa-floppy-disk"></i> Salvar </button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class='bx bxs-x-circle'></i> Fechar</button>
+                <button class="btn btn-success btn-primary btn-save"><i class='bx bxs-save' ></i> Salvar</button>
             </div>
         </div>
     </div>
 </div>
 
-<script src="src/vendedor/controle/salvar-vendedor.js"></script>
-<script src="src/vendedor/controle/novo-vendedor.js"></script>
-<script src="src/vendedor/controle/visualizar-vendedor.js"></script>
+
+<script src="src/vendedor/controle/new-vendedor.js"></script>
+<script src="src/vendedor/controle/save-vendedor.js"></script>
 <script src="src/vendedor/controle/list-vendedor.js"></script>
-<script src="src/vendedor/controle/editar-vendedor.js"></script>
+<script src="src/vendedor/controle/view-vendedor.js"></script>
+<script src="src/vendedor/controle/edit-vendedor.js"></script>
 <script src="src/vendedor/controle/delete-vendedor.js"></script>
