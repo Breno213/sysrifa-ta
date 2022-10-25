@@ -1,16 +1,16 @@
 <?php  
 
     // Conexão online
-    // $hostname = "sql102.epizy.com";
-    // $dbname = "epiz_31454041_rifa";
-    // $username = "epiz_31454041";
-    // $password = "10jBzsOvo5JqtN";
+     $hostname = "sql107.epizy.com";
+     $dbname = "epiz_31892403_sysrifa";
+     $username = "epiz_31892403";
+     $password = "aNvxTmYwtMs";
 
     // COnexão off-line
-    $hostname = "localhost:3308";
-    $dbname = "rifa";
-    $username = "root";
-    $password = "usbw";
+    // $hostname = "localhost:3308";
+    // $dbname = "rifa";
+    // $username = "root";
+    // $password = "usbw";
 
 
     try {
